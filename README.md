@@ -1,8 +1,17 @@
-# Django Polls Tutorial
+# Django Polls App
 
-This project follows the official Django tutorial for building a simple polls app. It demonstrates how to set up a Django project, create models, use the admin interface, and interact with the database.
+This is a simple web-based polling application built with Django, following the official Django tutorial. It demonstrates models, views, templates, forms, admin customization, static files, and integration with third-party packages like Django Debug Toolbar.
 
-## Getting Started
+## Features
+
+- Create and manage poll questions and choices
+- Vote on polls and view results
+- Admin interface with customizations
+- Static files for custom styles and images
+- Automated tests for models and views
+- Debugging with Django Debug Toolbar
+
+## Setup
 
 1. **Clone the repository:**
 
@@ -11,48 +20,68 @@ This project follows the official Django tutorial for building a simple polls ap
    cd djangotutorial
    ```
 
-2. **Install dependencies:**
+2. **Create and activate a virtual environment:**
+
+   ```sh
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. **Install dependencies:**
    Ensure you have Python 3 and pip installed. Then run:
 
    ```sh
-   pip install django
+   pip install -r requirements.txt
    ```
 
-3. **Apply migrations:**
+   Or manually:
+
+   ```sh
+   pip install django django-debug-toolbar
+   ```
+
+4. **Apply migrations:**
 
    ```sh
    python manage.py migrate
    ```
 
-4. **Create a superuser:**
+5. **Create a superuser:**
 
    ```sh
    python manage.py createsuperuser
    ```
 
-5. **Run the development server:**
+6. **Run the development server:**
 
    ```sh
    python manage.py runserver
    ```
 
-6. **Access the admin site:**
-   Open [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) and log in with your superuser credentials.
+## Usage
 
-## Features
+- Visit `http://127.0.0.1:8000/polls/` to use the polls app.
+- Visit `http://127.0.0.1:8000/admin/` to access the admin interface.
+- The Django Debug Toolbar will appear on the right side of the page in DEBUG mode.
 
-- Polls app with Question and Choice models
-- Admin interface for managing polls
-- Database setup using SQLite (default)
+## Project Structure
 
-## Time Zone
+- `polls/` - Django app containing models, views, templates, static files, and tests
+- `mysite/` - Project configuration
+- `templates/` - Custom project-level templates (e.g., admin overrides)
+- `static/` - Static files (CSS, images)
 
-This project is set to the `Africa/Nairobi` time zone for Mombasa, Kenya.
+## Testing
 
-## References
+Run all tests with:
 
-- [Django Documentation](https://docs.djangoproject.com/en/4.2/)
-- [Django Tutorial Part 1 & 2](https://docs.djangoproject.com/en/4.2/intro/tutorial01/)
+```sh
+python manage.py test polls
+```
+
+## License
+
+This project is for educational purposes, based on the [Django tutorial](https://docs.djangoproject.com/en/stable/intro/tutorial01/).
 
 ---
 
